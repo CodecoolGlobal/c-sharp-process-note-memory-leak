@@ -16,10 +16,7 @@ namespace ProcessNote.UI
 
         public MainWindow()
         {
-            InitializeComponent();
-            ///GenerateProcesses(15);
-            ///DataGridXML.IsReadOnly = true;
-            ///VisualizeProcesses();
+            InitializeComponent();   
         }
 
 
@@ -59,6 +56,35 @@ namespace ProcessNote.UI
 
        
         }
+        private void DataGridXML_Loaded(object sender, RoutedEventArgs e)
+        {
+            GenerateProcesses(15);
+            DataGridXML.IsReadOnly = true;
+            VisualizeProcesses();
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            CurrentllyRunningProcess process = (CurrentllyRunningProcess)DataGridXML.SelectedItem;
+
+            try
+            {
+                string searchQuery = process.name;
+                System.Diagnostics.Process.Start("https://www.google.com/search?q=" + Uri.EscapeDataString(searchQuery));
+
+            } catch (System.NullReferenceException exception)
+            {
+                Console.WriteLine(exception.ToString());
+            }
+
+
+        }
+
+        /// <summary>
+        /// BELOW METHOD IS USED FOR MOCKING!
+        /// </summary>
+        /// <param name="j"></param>
 
         public void GenerateProcesses(int j)
         {
@@ -70,11 +96,5 @@ namespace ProcessNote.UI
             }
         }
 
-        private void DataGridXML_Loaded(object sender, RoutedEventArgs e)
-        {
-            GenerateProcesses(15);
-            DataGridXML.IsReadOnly = true;
-            VisualizeProcesses();
-        }
     }
 }

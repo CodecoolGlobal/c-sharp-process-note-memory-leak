@@ -20,6 +20,7 @@
         <ListBox x:Name="ProcessDetailsXML" HorizontalAlignment="Left" Height="130" Margin="211,10,0,0" VerticalAlignment="Top" Width="135" ItemsSource="{Binding CurrentlyRunningProcess}">
         </ListBox>
         <Button x:Name="RefreshButton" Content="Refresh" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Margin="231,170,0,0" Height="52" Click="RefreshButton_Click"/>
+        <Button x:Name="SearchButton" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Margin="231,256,0,0" Height="57" Click="SearchButton_Click"/>
 
     </Grid>
 </Window>
