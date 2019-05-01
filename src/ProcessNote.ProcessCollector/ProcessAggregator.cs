@@ -49,9 +49,12 @@ namespace ProcessNote.Collector
         {   
             try
             {
-                string aRuntime = (DateTime.Now - process.StartTime).ToString();
-                return new CurrentllyRunningProcess(name:process.ProcessName.ToString(), cpuUsage: process.TotalProcessorTime.ToString(),
-                memoryUsage:process.PrivateMemorySize64.ToString(), startTime:process.StartTime.ToString(), runTime: aRuntime);
+                var _name = process.ProcessName.ToString();
+                var _cpuUsage = "CPU: " + process.TotalProcessorTime.ToString();
+                var _memoryUsage = "Memory: " + process.PrivateMemorySize64.ToString();
+                var _runtime = "Run time: "+ (DateTime.Now - process.StartTime).ToString();
+                var _startTime = "Start Time: " + process.StartTime.ToString();
+                return new CurrentllyRunningProcess(_name, _cpuUsage, _memoryUsage, _startTime, _runtime);
             }
             catch(Exception e)  
             {
