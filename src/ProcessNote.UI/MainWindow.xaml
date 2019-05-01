@@ -1,0 +1,25 @@
+﻿<Window x:Class="ProcessNote.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProcessNote.UI"
+        mc:Ignorable="d"
+        Title="Process Note by Memory Leak" Height="450" Width="393.243">
+    <Grid>
+
+        <DataGrid x:Name="DataGridXML"  HorizontalAlignment="Left" Height="400" Margin="10,10,0,0" VerticalAlignment="Top" Width="180" SelectedCellsChanged="DataGridXML_SelectedCellsChanged" Loaded="DataGridXML_Loaded">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding = "{Binding name}" Width="180"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <ListBox x:Name="ProcessDetailsXML" HorizontalAlignment="Left" Height="130" Margin="211,10,0,0" VerticalAlignment="Top" Width="135" ItemsSource="{Binding CurrentlyRunningProcess}">
+        </ListBox>
+        <Button x:Name="RefreshButton" Content="Refresh" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Margin="231,170,0,0" Height="52" Click="RefreshButton_Click"/>
+
+    </Grid>
+</Window>
