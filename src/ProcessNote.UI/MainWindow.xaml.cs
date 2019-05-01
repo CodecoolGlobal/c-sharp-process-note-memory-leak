@@ -51,14 +51,15 @@ namespace ProcessNote.UI
             ProcessDetailsXML.Items.Clear();
             processes.EmptyContainer();
             DataGridXML.Items.Clear();
-            GenerateProcesses(10);
+            processes.getAllRunningProcess();
+           // GenerateProcesses(10);
             VisualizeProcesses();
 
        
         }
         private void DataGridXML_Loaded(object sender, RoutedEventArgs e)
         {
-            GenerateProcesses(15);
+            processes.getAllRunningProcess();
             DataGridXML.IsReadOnly = true;
             VisualizeProcesses();
         }
