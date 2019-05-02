@@ -19,7 +19,7 @@ namespace ProcessNote.UI
 
         public void VisualizeProcesses()
         {
-            foreach (CurrentllyRunningProcess process in processes.getProcesses())
+            foreach (CurrentlyRunningProcess process in processes.getProcesses())
             {
                 DataGridXML.Items.Add(process);
             }
@@ -32,8 +32,8 @@ namespace ProcessNote.UI
             {
                 ProcessDetailsXML.Items.Clear();
                 ProcessNote.Text = String.Empty;
-                CurrentllyRunningProcess process = (CurrentllyRunningProcess)DataGridXML.SelectedItem;
-                ProcessDetailsXML.Items.Add(process.name + "\n" +  process.cpuUsage+ "\n" + process.memoryUsage + "\n" + process.startTime + "\n" + process.runTime + "\n");
+                CurrentlyRunningProcess process = (CurrentlyRunningProcess)DataGridXML.SelectedItem;
+                ProcessDetailsXML.Items.Add(process.ToString());
                 ProcessNote.Text = process.note;
             }
             catch (System.NullReferenceException exception)
@@ -55,7 +55,7 @@ namespace ProcessNote.UI
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
 
-            CurrentllyRunningProcess process = (CurrentllyRunningProcess)DataGridXML.SelectedItem;
+            CurrentlyRunningProcess process = (CurrentlyRunningProcess)DataGridXML.SelectedItem;
 
             try
             {
@@ -76,7 +76,7 @@ namespace ProcessNote.UI
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            CurrentllyRunningProcess process = (CurrentllyRunningProcess)DataGridXML.SelectedItem;
+            CurrentlyRunningProcess process = (CurrentlyRunningProcess)DataGridXML.SelectedItem;
             string note = ProcessNote.Text;
             process.addNote(note);
 
@@ -84,7 +84,7 @@ namespace ProcessNote.UI
 
         private void DataGridXML_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            CurrentllyRunningProcess process = (CurrentllyRunningProcess)DataGridXML.SelectedItem;
+            CurrentlyRunningProcess process = (CurrentlyRunningProcess)DataGridXML.SelectedItem;
             ProcessDetailsXML.Items.Clear();
             processes.EmptyContainer();
             DataGridXML.Items.Clear();
