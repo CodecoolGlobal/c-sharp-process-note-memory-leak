@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProcessNote.UI"
         mc:Ignorable="d"
-        Title="Process Note by Memory Leak" Height="680.593" Width="622.115">
+        Title="Process Note by Memory Leak" Height="457.126" Width="622.115">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="197*"/>
@@ -20,13 +20,14 @@
         </DataGrid>
 
 
-        <ListBox x:Name="ProcessDetailsXML" HorizontalAlignment="Left" Height="130" Margin="45,10,0,0" VerticalAlignment="Top" Width="248" ItemsSource="{Binding CurrentlyRunningProcess}" Grid.Column="1">
+        <ListBox x:Name="ProcessDetailsXML" HorizontalAlignment="Left" Height="102" Margin="45.4,38,0,0" VerticalAlignment="Top" Width="248" ItemsSource="{Binding CurrentlyRunningProcess}" Grid.Column="1">
         </ListBox>
-      
-        <Button x:Name="SearchButton" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="88" Margin="309,83,0,0" Height="57" Click="SearchButton_Click" Grid.Column="1"/>
-        <Label Content="Notes:" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="45,180,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.1,0.442"/>
+
+        <Button x:Name="SearchButton" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="88" Margin="310.4,38,0,0" Height="56" Click="SearchButton_Click" Grid.Column="1"/>
+        <Label Content="Notes:" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="45.4,162,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.1,0.442"/>
         <Button x:Name="SaveCommentButton" Content="Save&#xD;&#xA;Comment" Grid.Column="1" HorizontalAlignment="Center" Height="57" Margin="294,197,0,0" VerticalAlignment="Top" Width="84" Click="Button_Click"/>
-        <TextBox x:Name="ProcessNote" Grid.Column="1" HorizontalAlignment="Left" Height="204" Margin="89,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204"/>
+        <TextBox x:Name="ProcessNote" Grid.Column="1" HorizontalAlignment="Left" Height="213" Margin="45.4,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"/>
+        <Label Content="Process Details:" Grid.Column="1" HorizontalAlignment="Left" Margin="45.4,10,0,0" VerticalAlignment="Top" Width="101" Height="28"/>
 
     </Grid>
 </Window>

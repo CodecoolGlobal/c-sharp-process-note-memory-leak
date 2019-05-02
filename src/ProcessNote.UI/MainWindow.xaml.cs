@@ -1,8 +1,5 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using ProcessNote.CurrentProcess;
-using ProcessNote.Collector;
 
 namespace ProcessNote.UI
 {
