@@ -39,8 +39,18 @@ namespace ProcessNote.Collector
 
             foreach (var acturalProcess in _allProcess)
 	        {
-                processes.Add(createProcessInstance(acturalProcess));
 
+                try
+                {
+                    processes.Add(createProcessInstance(acturalProcess));
+                }
+                catch (System.ArgumentNullException e)
+                {
+                    Console.Write(e.ToString());
+                }
+
+                
+               
 	        }
 
         }
@@ -61,6 +71,7 @@ namespace ProcessNote.Collector
             catch(Exception e)  
             {
                 Console.WriteLine(e.ToString());
+                return null;
             }
 
         }

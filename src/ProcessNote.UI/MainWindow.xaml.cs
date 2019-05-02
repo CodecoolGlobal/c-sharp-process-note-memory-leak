@@ -6,13 +6,10 @@ using ProcessNote.Collector;
 
 namespace ProcessNote.UI
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    
     public partial class MainWindow : Window
     {
         ProcessAggregator processes = new ProcessAggregator();
-        int tempCounter = 0;
 
         public MainWindow()
         {
@@ -47,17 +44,7 @@ namespace ProcessNote.UI
 
         }
 
-        private void RefreshButton_Click(object sender, RoutedEventArgs e)
-        {
-            ProcessDetailsXML.Items.Clear();
-            processes.EmptyContainer();
-            DataGridXML.Items.Clear();
-            processes.getAllRunningProcess();
-           // GenerateProcesses(10);
-            VisualizeProcesses();
-
        
-        }
         private void DataGridXML_Loaded(object sender, RoutedEventArgs e)
         {
             processes.getAllRunningProcess();
@@ -83,21 +70,6 @@ namespace ProcessNote.UI
 
         }
 
-        /// <summary>
-        /// BELOW METHOD IS USED FOR MOCKING!
-        /// </summary>
-        /// <param name="j"></param>
-
-        public void GenerateProcesses(int j)
-        {
-            for (int i = 0; i < j; i++)
-            {
-                string tempToString = tempCounter.ToString();
-                processes.addNewProcess(new CurrentllyRunningProcess("Process " + tempCounter, "100", "80", "10:40", "1:50"));
-                tempCounter++;
-            }
-        }
-
 
         /*Eventhandler for Save Comment button*/
 
@@ -108,6 +80,25 @@ namespace ProcessNote.UI
             string note = ProcessNote.Text;
             process.addNote(note);
 
+        }
+
+        private void DataGridXML_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            CurrentllyRunningProcess process = (CurrentllyRunningProcess)DataGridXML.SelectedItem;
+            ProcessDetailsXML.Items.Clear();
+            processes.EmptyContainer();
+            DataGridXML.Items.Clear();
+            processes.getAllRunningProcess();
+            VisualizeProcesses();
+
+            try
+            {
+                ProcessDetailsXML.Items.Add(process.name + "\n" + process.cpuUsage + "\n" + process.memoryUsage + "\n" + process.startTime + "\n" + process.runTime + "\n");
+            }
+            catch (System.NullReferenceException c)
+            {
+                Console.WriteLine(c.ToString());
+            }
         }
     }
 }
