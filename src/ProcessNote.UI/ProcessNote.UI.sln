@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessNote.Collector", "..
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessNote.CurrentProcess", "..\ProcessNote.CurrentProcess\ProcessNote.CurrentProcess.csproj", "{3ECE3166-5D30-4A69-B97D-20BCD8AC78F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessNote.UnitTest", "..\..\test\ProcessNote.UnitTest\ProcessNote.UnitTest.csproj", "{1828963C-18C8-4FA0-8162-E1943EEFACB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3ECE3166-5D30-4A69-B97D-20BCD8AC78F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3ECE3166-5D30-4A69-B97D-20BCD8AC78F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3ECE3166-5D30-4A69-B97D-20BCD8AC78F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1828963C-18C8-4FA0-8162-E1943EEFACB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1828963C-18C8-4FA0-8162-E1943EEFACB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1828963C-18C8-4FA0-8162-E1943EEFACB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1828963C-18C8-4FA0-8162-E1943EEFACB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
