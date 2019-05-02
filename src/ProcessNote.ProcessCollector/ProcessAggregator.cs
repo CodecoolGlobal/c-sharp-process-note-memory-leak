@@ -61,7 +61,6 @@ namespace ProcessNote.Collector
             catch(Exception e)  
             {
                 Console.WriteLine(e.ToString());
-                return null;
             }
 
         }
