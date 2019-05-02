@@ -34,9 +34,10 @@ namespace ProcessNote.UI
             try
             {
                 ProcessDetailsXML.Items.Clear();
-
+                ProcessNote.Text = String.Empty;
                 CurrentllyRunningProcess process = (CurrentllyRunningProcess)DataGridXML.SelectedItem;
-                ProcessDetailsXML.Items.Add(process.name + "\n" + process.memoryUsage + "\n" + process.startTime + "\n" + process.runTime + "\n");
+                ProcessDetailsXML.Items.Add(process.name + "\n" +  process.cpuUsage+ "\n" + process.memoryUsage + "\n" + process.startTime + "\n" + process.runTime + "\n");
+                ProcessNote.Text = process.note;
             }
             catch (System.NullReferenceException exception)
             {
@@ -97,5 +98,16 @@ namespace ProcessNote.UI
             }
         }
 
+
+        /*Eventhandler for Save Comment button*/
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            CurrentllyRunningProcess process = (CurrentllyRunningProcess)DataGridXML.SelectedItem;
+            string note = ProcessNote.Text;
+            process.addNote(note);
+
+        }
     }
 }

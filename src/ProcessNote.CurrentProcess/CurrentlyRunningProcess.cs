@@ -1,4 +1,4 @@
-﻿
+﻿using ProcessNote;
 
 namespace ProcessNote.CurrentProcess
 {
@@ -9,6 +9,8 @@ namespace ProcessNote.CurrentProcess
         public string memoryUsage { get; set; }
         public string startTime { get; set; }
         public string runTime { get; set; }
+        public string note ;
+
         public CurrentllyRunningProcess(string name, string cpuUsage, string memoryUsage, string startTime, string runTime)
         {
             this.name = name;
@@ -16,6 +18,11 @@ namespace ProcessNote.CurrentProcess
             this.memoryUsage = memoryUsage;
             this.startTime = startTime;
             this.runTime = runTime;
+        }
+
+        public void addNote(string aNote)
+        {
+            this.note += aNote;
         }
     }
 }
