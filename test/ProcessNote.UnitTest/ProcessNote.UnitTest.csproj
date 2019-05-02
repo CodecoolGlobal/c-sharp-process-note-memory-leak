@@ -55,6 +55,16 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\ProcessNote.CurrentProcess\ProcessNote.CurrentProcess.csproj">
+      <Project>{3ECE3166-5D30-4A69-B97D-20BCD8AC78F2}</Project>
+      <Name>ProcessNote.CurrentProcess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\ProcessNote.ProcessCollector\ProcessNote.Collector.csproj">
+      <Project>{4141165B-C6DC-4A78-914F-A5A80F509816}</Project>
+      <Name>ProcessNote.Collector</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -10,6 +10,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessNote.CurrentProcess", "..\ProcessNote.CurrentProcess\ProcessNote.CurrentProcess.csproj", "{3ECE3166-5D30-4A69-B97D-20BCD8AC78F2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessNote.UnitTest", "..\..\test\ProcessNote.UnitTest\ProcessNote.UnitTest.csproj", "{1828963C-18C8-4FA0-8162-E1943EEFACB1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4141165B-C6DC-4A78-914F-A5A80F509816} = {4141165B-C6DC-4A78-914F-A5A80F509816}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
