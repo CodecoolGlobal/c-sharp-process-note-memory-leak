@@ -14,7 +14,7 @@ namespace ProcessNote.UI
         private ProcessAggregator processes = new ProcessAggregator();
         private void VisualizeProcesses(DataGrid DataGridXML)
         {
-            foreach (CurrentllyRunningProcess process in processes.getProcesses())
+            foreach (CurrentlyRunningProcess process in processes.getProcesses())
             {
                 DataGridXML.Items.Add(process);
             }
@@ -27,8 +27,8 @@ namespace ProcessNote.UI
             {
                 ProcessDetailsXML.Items.Clear();
                 ProcessNote.Text = String.Empty;
-                CurrentllyRunningProcess process = (CurrentllyRunningProcess)DataGridXML.SelectedItem;
-                ProcessDetailsXML.Items.Add(process.name + "\n" + process.cpuUsage + "\n" + process.memoryUsage + "\n" + process.startTime + "\n" + process.runTime + "\n");
+                CurrentlyRunningProcess process = (CurrentlyRunningProcess)DataGridXML.SelectedItem;
+                ProcessDetailsXML.Items.Add(process.ToString());
                 ProcessNote.Text = process.note;
             }
             catch (System.NullReferenceException exception)
@@ -47,7 +47,7 @@ namespace ProcessNote.UI
 
         public void SearchOnWeb(DataGrid DataGridXML)
         {
-            CurrentllyRunningProcess process = (CurrentllyRunningProcess)DataGridXML.SelectedItem;
+            CurrentlyRunningProcess process = (CurrentlyRunningProcess)DataGridXML.SelectedItem;
             try
             {
                 string searchQuery = process.name;
@@ -61,14 +61,14 @@ namespace ProcessNote.UI
 
         public void SaveComment(DataGrid DataGridXML, TextBox ProcessNote)
         {
-            CurrentllyRunningProcess process = (CurrentllyRunningProcess)DataGridXML.SelectedItem;
+            CurrentlyRunningProcess process = (CurrentlyRunningProcess)DataGridXML.SelectedItem;
             string note = ProcessNote.Text;
             process.addNote(note);
         }
 
         public void RefreshOnDoubleClick(DataGrid DataGridXML, TextBox ProcessNote, ListBox ProcessDetailsXML)
         {
-            CurrentllyRunningProcess process = (CurrentllyRunningProcess)DataGridXML.SelectedItem;
+            CurrentlyRunningProcess process = (CurrentlyRunningProcess)DataGridXML.SelectedItem;
             ProcessDetailsXML.Items.Clear();
             processes.EmptyContainer();
             DataGridXML.Items.Clear();
@@ -76,7 +76,7 @@ namespace ProcessNote.UI
             VisualizeProcesses(DataGridXML);
             try
             {
-                ProcessDetailsXML.Items.Add(process.name + "\n" + process.cpuUsage + "\n" + process.memoryUsage + "\n" + process.startTime + "\n" + process.runTime + "\n");
+                ProcessDetailsXML.Items.Add(process.ToString());
             }
             catch (System.NullReferenceException c)
             {
